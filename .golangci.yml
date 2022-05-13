@@ -138,5 +138,5 @@ linters:
 issues:
   exclude-rules:
     - path: go.mod
-      text: 'replacement are not allowed: golang.org/x/time/rate'
+      text: "replacement are not allowed: golang.org/x/time/rate"
 
