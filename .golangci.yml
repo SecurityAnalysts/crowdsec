@@ -55,7 +55,6 @@ linters:
     # - funlen              # Tool for detection of long functions
     # - gochecknoinits      # Checks that no init functions are present in Go code
     # - goheader            # Checks is file header matches to pattern
-    # - goimports           # In addition to fixing imports, goimports also formats your code in the same style as gofmt.
     # - gomoddirectives     # Manage the use of 'replace', 'retract', and 'excludes' directives in go.mod.
     # - gomodguard          # Allow and block list linter for direct Go module dependencies. This is different from depguard where there are different block types for example version constraints and module recommendations.
     # - goprintffuncname    # Checks that printf-like functions are named with `f` at the end
@@ -90,6 +89,7 @@ linters:
     - deadcode              # Finds unused code
     - gci                   # Gci control golang package import order and make it always deterministic.
     - gofmt                 # Gofmt checks whether code was gofmt-ed. By default this tool runs with -s option to check for code simplification
+    - goimports             # In addition to fixing imports, goimports also formats your code in the same style as gofmt.
     - govet                 # (vet, vetshadow): Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string
     - ineffassign           # Detects when assignments to existing variables are not used
     - unconvert             # Remove unnecessary type conversions
