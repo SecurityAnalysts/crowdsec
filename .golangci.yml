@@ -77,6 +77,8 @@ linters:
     - varnamelen            # checks that the length of a variable's name matches its scope
     - gochecknoglobals      # check that no global variables exist
     - exhaustivestruct      # Checks if all struct's fields are initialized
+    - goconst               # Finds repeated strings that could be replaced by a constant
+    - stylecheck            # Stylecheck is a replacement for golint
 
     #
     # Not ready for this
@@ -101,6 +103,17 @@ linters:
     - errcheck              # Errcheck is a program for checking for unchecked errors in go programs. These unchecked errors can be critical bugs in some cases
     - errorlint             # errorlint is a linter for that can be used to find code that will cause problems with the error wrapping scheme introduced in Go 1.13.
     - nakedret              # Finds naked returns in functions greater than a specified function length
+    - gosec                 # (gas): Inspects source code for security problems
+    - revive                # Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.
+    - gosimple              # (megacheck): Linter for Go source code that specializes in simplifying a code
+
+    #
+    # Formatting only, useful in IDE but should not be forced on CI?
+    #
+
+    - gofumpt               # Gofumpt checks whether code was gofumpt-ed.
+    - wsl                   # Whitespace Linter - Forces you to use empty lines!
+    - whitespace            # Tool for detection of leading and trailing whitespace
 
     #
     # Under evaluation
@@ -117,16 +130,12 @@ linters:
     - exhaustive            # check exhaustiveness of enum switch statements
     - forcetypeassert       # finds forced type assertions
     - gocognit              # Computes and checks the cognitive complexity of functions
-    - goconst               # Finds repeated strings that could be replaced by a constant
     - gocritic              # Provides diagnostics that check for bugs, performance and style issues.
     - gocyclo               # Computes and checks the cyclomatic complexity of functions
     - godot                 # Check if comments end in a period
     - godox                 # Tool for detection of FIXME, TODO and other comment keywords
     - goerr113              # Golang linter to check the errors handling expressions
-    - gofumpt               # Gofumpt checks whether code was gofumpt-ed.
     - gomnd                 # An analyzer to detect magic numbers.
-    - gosec                 # (gas): Inspects source code for security problems
-    - gosimple              # (megacheck): Linter for Go source code that specializes in simplifying a code
     - ifshort               # Checks that your code uses short syntax for if-statements whenever possible
     - ireturn               # Accept Interfaces, Return Concrete Types
     - lll                   # Reports long lines
@@ -137,16 +146,12 @@ linters:
     - nlreturn              # nlreturn checks for a new line before return and branch statements to increase code clarity
     - noctx                 # noctx finds sending http request without context.Context
     - prealloc              # Finds slice declarations that could potentially be preallocated
-    - revive                # Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.
     - staticcheck           # (megacheck): Staticcheck is a go vet on steroids, applying a ton of static analysis checks
     - structcheck           # Finds unused struct fields
-    - stylecheck            # Stylecheck is a replacement for golint
     - testpackage           # linter that makes you use a separate _test package
     - thelper               # thelper detects golang test helpers without t.Helper() call and checks the consistency of test helpers
     - unparam               # Reports unused function parameters
-    - whitespace            # Tool for detection of leading and trailing whitespace
     - wrapcheck             # Checks that errors returned from external packages are wrapped
-    - wsl                   # Whitespace Linter - Forces you to use empty lines!
 
 issues:
   exclude-rules:
