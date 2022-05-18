@@ -86,26 +86,33 @@ linters:
     - paralleltest          # paralleltest detects missing usage of t.Parallel() method in your Go test
 
     #
-    # Recommended?
+    # Enabled by default by golangci (but require fixing current issues)
     #
     - deadcode              # Finds unused code
+    - errcheck              # Errcheck is a program for checking for unchecked errors in go programs. These unchecked errors can be critical bugs in some cases
+    - gosimple              # (megacheck): Linter for Go source code that specializes in simplifying a code
+    - govet                 # (vet, vetshadow): Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string
+    - ineffassign           # Detects when assignments to existing variables are not used
+    - staticcheck           # (megacheck): Staticcheck is a go vet on steroids, applying a ton of static analysis checks
+    - structcheck           # Finds unused struct fields
+    - unused                # (megacheck): Checks Go code for unused constants, variables, functions and types
+
+
+    #
+    # Recommended?
+    #
     - gci                   # Gci control golang package import order and make it always deterministic.
     - gofmt                 # Gofmt checks whether code was gofmt-ed. By default this tool runs with -s option to check for code simplification
     - goimports             # In addition to fixing imports, goimports also formats your code in the same style as gofmt.
-    - govet                 # (vet, vetshadow): Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string
-    - ineffassign           # Detects when assignments to existing variables are not used
     - unconvert             # Remove unnecessary type conversions
-    - unused                # (megacheck): Checks Go code for unused constants, variables, functions and types
     - wastedassign          # wastedassign finds wasted assignment statements.
     - predeclared           # find code that shadows one of Go's predeclared identifiers
     - misspell              # Finds commonly misspelled English words in comments
     - promlinter            # Check Prometheus metrics naming via promlint
-    - errcheck              # Errcheck is a program for checking for unchecked errors in go programs. These unchecked errors can be critical bugs in some cases
     - errorlint             # errorlint is a linter for that can be used to find code that will cause problems with the error wrapping scheme introduced in Go 1.13.
     - nakedret              # Finds naked returns in functions greater than a specified function length
     - gosec                 # (gas): Inspects source code for security problems
     - revive                # Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.
-    - gosimple              # (megacheck): Linter for Go source code that specializes in simplifying a code
 
     #
     # Formatting only, useful in IDE but should not be forced on CI?
@@ -146,8 +153,6 @@ linters:
     - nlreturn              # nlreturn checks for a new line before return and branch statements to increase code clarity
     - noctx                 # noctx finds sending http request without context.Context
     - prealloc              # Finds slice declarations that could potentially be preallocated
-    - staticcheck           # (megacheck): Staticcheck is a go vet on steroids, applying a ton of static analysis checks
-    - structcheck           # Finds unused struct fields
     - testpackage           # linter that makes you use a separate _test package
     - thelper               # thelper detects golang test helpers without t.Helper() call and checks the consistency of test helpers
     - unparam               # Reports unused function parameters
