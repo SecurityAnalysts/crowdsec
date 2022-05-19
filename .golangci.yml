@@ -101,26 +101,30 @@ linters:
     #
     # Recommended?
     #
+    - errchkjson            # Checks types passed to the json encoding functions. Reports unsupported types and optionally reports occations, where the check for the returned error can be omitted.
+    - errorlint             # errorlint is a linter for that can be used to find code that will cause problems with the error wrapping scheme introduced in Go 1.13.
+    - forcetypeassert       # finds forced type assertions
     - gci                   # Gci control golang package import order and make it always deterministic.
     - gofmt                 # Gofmt checks whether code was gofmt-ed. By default this tool runs with -s option to check for code simplification
     - goimports             # In addition to fixing imports, goimports also formats your code in the same style as gofmt.
+    - gosec                 # (gas): Inspects source code for security problems
+    - misspell              # Finds commonly misspelled English words in comments
+    - nakedret              # Finds naked returns in functions greater than a specified function length
+    - nilerr                # Finds the code that returns nil even if it checks that the error is not nil.
+    - predeclared           # find code that shadows one of Go's predeclared identifiers
+    - promlinter            # Check Prometheus metrics naming via promlint
+    - revive                # Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.
     - unconvert             # Remove unnecessary type conversions
     - wastedassign          # wastedassign finds wasted assignment statements.
-    - predeclared           # find code that shadows one of Go's predeclared identifiers
-    - misspell              # Finds commonly misspelled English words in comments
-    - promlinter            # Check Prometheus metrics naming via promlint
-    - errorlint             # errorlint is a linter for that can be used to find code that will cause problems with the error wrapping scheme introduced in Go 1.13.
-    - nakedret              # Finds naked returns in functions greater than a specified function length
-    - gosec                 # (gas): Inspects source code for security problems
-    - revive                # Fast, configurable, extensible, flexible, and beautiful linter for Go. Drop-in replacement of golint.
 
     #
     # Formatting only, useful in IDE but should not be forced on CI?
     #
 
     - gofumpt               # Gofumpt checks whether code was gofumpt-ed.
-    - wsl                   # Whitespace Linter - Forces you to use empty lines!
+    - nlreturn              # nlreturn checks for a new line before return and branch statements to increase code clarity
     - whitespace            # Tool for detection of leading and trailing whitespace
+    - wsl                   # Whitespace Linter - Forces you to use empty lines!
 
     #
     # Under evaluation
@@ -132,10 +136,8 @@ linters:
     - cyclop                # checks function and package cyclomatic complexity
     - dogsled               # Checks assignments with too many blank identifiers (e.g. x, _, _, _, := f())
     - dupl                  # Tool for code clone detection
-    - errchkjson            # Checks types passed to the json encoding functions. Reports unsupported types and optionally reports occations, where the check for the returned error can be omitted.
     - errname               # Checks that sentinel errors are prefixed with the `Err` and error types are suffixed with the `Error`.
     - exhaustive            # check exhaustiveness of enum switch statements
-    - forcetypeassert       # finds forced type assertions
     - gocognit              # Computes and checks the cognitive complexity of functions
     - gocritic              # Provides diagnostics that check for bugs, performance and style issues.
     - gocyclo               # Computes and checks the cyclomatic complexity of functions
@@ -148,9 +150,7 @@ linters:
     - lll                   # Reports long lines
     - maintidx              # maintidx measures the maintainability index of each function.
     - nestif                # Reports deeply nested if statements
-    - nilerr                # Finds the code that returns nil even if it checks that the error is not nil.
     - nilnil                # Checks that there is no simultaneous return of `nil` error and an invalid value.
-    - nlreturn              # nlreturn checks for a new line before return and branch statements to increase code clarity
     - noctx                 # noctx finds sending http request without context.Context
     - prealloc              # Finds slice declarations that could potentially be preallocated
     - testpackage           # linter that makes you use a separate _test package
